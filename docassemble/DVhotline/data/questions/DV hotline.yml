@@ -1,0 +1,38 @@
+---
+metadata: 
+  title: MA - DV hotline service lookup
+---
+modules:
+  - .dv_hotline
+---
+features: 
+  css: dv-hotline.css  
+---
+question: |  
+  To lookup for DV service information in Massachusetts, like hotline phone and office hours, please enter a city name.
+subquestion: |  
+  The city must be in MA.
+  
+fields:
+  - City name: myCity
+    default: Acton
+---
+mandatory: True
+question: |
+  ##Credit: we are using the search engine provided by https://janedoe.org.<br/>
+  
+  ##This project is unfinished. It still needs to add "zip" as an input option, and the docx output needs more work.
+subquestion: |  
+  ${ screenOutput }
+attachment:
+  name: MA DV Hotline Numbers
+  filename: MA DV Hotline Numbers
+  docx template file: hotline-output.docx  
+---
+code: |
+  screenOutput = ma_dv_hotline(myCity)
+  #Docs output
+  item = HTMLFilter()
+  item.feed(screenOutput)
+  output = item.text
+

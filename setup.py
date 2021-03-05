@@ -43,9 +43,9 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
     return out
 
 setup(name='docassemble.DVhotline',
-      version='0.0.1',
+      version='0.0.2',
       description=('A docassemble extension.'),
-      long_description='This project is unfinished. The input needs a "zip" option, and the docx output needs more work.\r\n\r\nYou may need to install the Python mechanize package on your server in order to work on this interview.',
+      long_description='This project is designed for a specific website.',
       long_description_content_type='text/markdown',
       author='purplesky2016',
       author_email='purplesky2016@example.org',
